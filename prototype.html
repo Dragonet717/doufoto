@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
+		<script type="text/javascript">
+			// prototype
+			/*
+			function Person(name, gender)
+			{
+				this.name = name;
+				this.gender = gender;
+				this.whoAreYou = function(){//这个也是所谓的closure, 内部函数可以访问外部函数的变量
+					var res = "I'm " + this.name + " and I'm a " + this.gender +".";
+					return res;
+				};
+			}
+			// 那么在由Person创建的对象便具有了下面的几个属性
+			Person.prototype.age = 24;
+			Person.prototype.getAge = function(){
+				return this.age;
+			};
+
+			flag = true;
+			if (flag)
+			{
+				var fun = new Person("Tower", "male");
+				alert(fun.name);
+				alert(fun.gender);
+				alert(fun.whoAreYou());
+				alert(fun.getAge());
+			}
+
+			Person.prototype.salary = 10000;
+			Person.prototype.getSalary = function(){
+				return this.name + " can earn about " + this.salary + "RMB each month." ;
+			};
+			// 下面就是最神奇的地方, 我们改变了Person的prototype,而这个改变是在创建fun之后
+			// 而这个改变使得fun也具有了相同的属性和方法
+			// 继承的意味即此
+			if (flag)
+			{
+				alert(fun.getSalary());
+				alert(fun.constructor.prototype.age);//而这个相当于你直接调用 Person.prototype.age
+				alert(Person.prototype.age);
+				http://idm.uuwatch.com/entry/show.do?key=1117459
+				http://www.sxsm.gov.cn/zwxxgk/zfcggg/zbgg/201505/t20150518_208663.html
+				http://www.sxsm.gov.cn/zwxxgk/zfcggg/zbgg/201505/t20150518_208663.html
+
+				252358
+
+				http://www.wzrb.com.cn/article656638show.html
+
+				// try
+				// {
+				// SystemHeartbeat.CLIENT.set("env.beta", 0, Boolean.FALSE);
+				// }
+				// catch (final TimeoutException e1)
+				// {
+				// // TODO Auto-generated catch block
+				// e1.printStackTrace();
+				// }
+				// catch (final InterruptedException e1)
+				// {
+				// // TODO Auto-generated catch block
+				// e1.printStackTrace();
+				// }
+				// catch (final MemcachedException e1)
+				// {
+				// // TODO Auto-generated catch block
+				// e1.printStackTrace();
+				// }
+
+			}
+			*/
+			// function count(){
+			$(document).ready(function(){
+			 	var id = [13168,11952,14691,14707,16416,16924,17382,17464,17563,17752,18021,18310,18319,17674,17671,17676,17594,21537,17042,17370,17689,18125,18127,17571,17271,21536,12185,13409,11818,13779,13917,17742,18308,18154,18485,17733,17629,17659,17657,17589,17624,18452,21496,21501,21508,12204,13787,15580,15618,15914,17361,17633,17710,17623,17703,21483,21510,12183,12553,13926,14681,17603,18141,17570,12207,15573,17047,17364,17387,17457,17803,18314,17572,17034,12230,13817,16938,19291,17029,21595,10822,12192,13797,13927,17365,17546,21525,22446,13175,11545,17821,18003,18140,18315,17545,11707,13176,15193,18317,18770,17628,21319,21522,18300,17642,12178,15899,15924,17359,17641,18153,12482,13925,17037,17410,17851,18128,17720,17670,17675,17721,17724,18360,12277,12479,11170,15276,17386,17471,18321,17636,17693,17622,17646,21485,13922,21958,14668,17795,18094,18126,18295,17697,13434,18309,21517,14657,17794,17175,17701,17614,21415,21416,21528,21952,10218,12437,11178,14674,17377,17645,17696,17630,17638,17707,21498,21500,21506,21524,12545,13044,11156,11632,13777,13801,14642,14650,14670,16438,17061,17369,17372,17378,17385,17388,17389,17390,17391,17394,17395,17396,17449,17472,17561,17690,17741,18105,18142,18155,18318,17615,17661,17658,17620,17613,17666,17616,17702,17718,17746,22469,12484,13167,17376,17397,17617,18030,17644,17669,14404,17711,17722,17712,15901,17048,17625,17587,17719,10067,11558,11134,11216,12199,13773,15732,15882,16113,17398,17788,21504,21518,21570,12197,13803,17444,17609,16544,17745,21514,21534,10227,11218,12005,14648,14652,18004];
+
+
+				var url = "http://cdm.uuwatch.com/ajax/count?id=1&d1=2015-10-16&d2=2015-10-16&from=18787&media=&token=741&index=1";
+				$.ajax({
+					url : url,
+					method: 'get',
+dataType : "jsonp", 
+jsonp: "callbackparam",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+jsonpCallback:"success_jsonpCallback",
+					async:false,    
+				//	success: function (responseText, textStatus, XMLHttpRequest) {
+                                        success: function(json){
+
+alert(json); 				//		console.log(responseText);
+					}
+				});   
+$.getJSON("http://cdm.uuwatch.com/ajax/count?id=1&d1=2015-10-16&d2=2015-10-16&from=18787&media=&token=741&index=1&jsoncallback=?", { id: 0, action: 'jobcategoryjson' }, function(json) {
+
+			        alert(json[0].pid);
+			        alert(json[0].items[0]._name);
+
+			    }); 
+			}); 
+		</script>
+	</head>
+	<body>
+		<div id="div"></div>
+	</body>
+
+</html>
